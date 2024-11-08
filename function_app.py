@@ -14,7 +14,7 @@ def call_cli():
         ]
 
         # Run the command as a subprocess and capture the output
-        result = cli.run("https://github.com/trufflesecurity/test_keys")
+        result = cli.run(targets=["https://github.com/trufflesecurity/test_keys"])
         # result = subprocess.run(command, capture_output=True, text=True)
 
         # Check if the command was successful
