@@ -1,7 +1,6 @@
 import subprocess
 import azure.functions as func
 import logging
-from trufflehog3 import cli
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
 
