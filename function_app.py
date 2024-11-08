@@ -1,6 +1,7 @@
 import subprocess
 import azure.functions as func
 import logging
+from trufflehog import cli
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
 
@@ -13,7 +14,8 @@ def call_cli():
         ]
 
         # Run the command as a subprocess and capture the output
-        result = subprocess.run(command, capture_output=True, text=True)
+        result = cli.run("https://github.com/trufflesecurity/test_keys")
+        # result = subprocess.run(command, capture_output=True, text=True)
 
         # Check if the command was successful
         if result.returncode == 2:
